@@ -1,5 +1,6 @@
 package com.example.roomdemo.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -50,13 +51,16 @@ class MainActivity : AppCompatActivity() {
 
         val getData = findViewById<Button>(R.id.btn_get_from_database)
 
-        getData.setOnClickListener{
-            GlobalScope.launch {
-                userDao.getAll().collect { users ->
-                    Log.d("User Data -> ", "Users: $users")
-                }
-            }
+//        getData.setOnClickListener{
+//            GlobalScope.launch {
+//                userDao.getAll().collect { users ->
+//                    Log.d("User Data -> ", "Users: $users")
+//                }
+//            }
+//        }
 
+        getData.setOnClickListener{
+            startActivity(Intent(this, MainActivity2::class.java))
         }
     }
 }
