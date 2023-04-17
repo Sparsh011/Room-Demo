@@ -26,16 +26,16 @@ class MainActivity : AppCompatActivity() {
         val etFirstName = findViewById<EditText>(R.id.et_first_name)
         val etLastName = findViewById<EditText>(R.id.et_last_name)
         val addToDatabase = findViewById<Button>(R.id.btn_add_to_database)
+        val etAge = findViewById<EditText>(R.id.et_age)
 
         addToDatabase.setOnClickListener{
             val userName = etUserName.text.toString()
             val firstName = etFirstName.text.toString()
             val lastName = etLastName.text.toString()
+            val age = etAge.text.toString().toInt()
 
 
-
-                val user = User(userName, firstName, lastName)
-
+                val user = User(userName, firstName, lastName, age, false)
                 GlobalScope.launch {
                     if (userDao.count(userName) != 0){
                         withContext(Dispatchers.Main) {
