@@ -42,14 +42,27 @@
         android:padding="15dp"
         />
 
+    <EditText
+        android:id="@+id/et_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/et_username"
+        app:layout_constraintStart_toStartOf="@id/et_username"
+        app:layout_constraintEnd_toEndOf="@id/et_username"
+        android:hint="Enter Age"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:inputType="number"
+        />
+
     <Button
         android:id="@+id/btn_add_to_database"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add To Database"
-        app:layout_constraintTop_toBottomOf="@+id/et_username"
-        app:layout_constraintStart_toStartOf="@+id/et_username"
-        app:layout_constraintEnd_toEndOf="@+id/et_username"
+        app:layout_constraintTop_toBottomOf="@+id/et_age"
+        app:layout_constraintStart_toStartOf="@+id/et_age"
+        app:layout_constraintEnd_toEndOf="@+id/et_age"
         android:layout_margin="20dp"
         android:padding="10dp"/>
 
